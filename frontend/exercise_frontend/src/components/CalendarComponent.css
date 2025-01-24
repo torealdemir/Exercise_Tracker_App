@@ -1,62 +1,26 @@
-/* .calendar-container {
-    text-align: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .exercise-details {
-    margin-top: 20px;
-  }
-  
-  input {
-    padding: 8px;
-    margin-right: 10px;
-  }
-  
-  button {
-    padding: 8px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  li {
-    margin: 5px 0;
-  }
-   */
-   .react-calendar {
-    width: 100%; /* Make the calendar fill the container */
-    max-width: 800px; /* Set a maximum width for larger screens */
-    font-size: 1.5rem; /* Increase the font size */
-    margin: 0 auto; /* Center the calendar */
-  }
-  
-  .react-calendar button {
-    height: 50px; /* Make buttons larger */
-  }
+.react-calendar {
+  width: 100%; /* Make the calendar fill the container */
+  max-width: 800px; /* Set a maximum width for larger screens */
+  font-size: 1.5rem; /* Increase the font size */
+  margin: 0 auto; /* Center the calendar */
+}
 
-  h1, h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.react-calendar button {
+  height: 50px; /* Make buttons larger */
+}
 
-  .exercise-details {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-  }
+h1,
+h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exercise-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
 
 /* Default calendar styles */
 .react-calendar {
