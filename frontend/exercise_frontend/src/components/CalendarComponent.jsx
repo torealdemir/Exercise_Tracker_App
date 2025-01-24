@@ -23,12 +23,25 @@ const CalendarComponent = () => {
 
   const selectedDateExercises = exercises[selectedDate.toISOString().split("T")[0]] || [];
 
+  // Apply custom classes to calendar tiles
+  const tileClassName = ({ date }) => {
+    const dateKey = date.toISOString().split("T")[0];
+    if (exercises[dateKey] && exercises[dateKey].length > 0) {
+      return "exercise-day-tile"; // If the date has exercises
+    }
+    return "no-exercise-day-tile"; // If no exercises for the date
+  };
+
   return (
     <div className="calendar-container">
-      <h1>Exercise Tracker</h1>
-      <Calendar onChange={handleDateClick} value={selectedDate} />
+      <h1>Gym Bros Exercise Tracker</h1>
+      <Calendar
+        onChange={handleDateClick}
+        value={selectedDate}
+        tileClassName={tileClassName} // Apply custom tile class
+      />
+      <h2>Exercises for {selectedDate.toDateString()}</h2>
       <div className="exercise-details">
-        <h2>Exercises for {selectedDate.toDateString()}</h2>
         <ul>
           {selectedDateExercises.map((exercise, index) => (
             <li key={index}>{exercise}</li>
