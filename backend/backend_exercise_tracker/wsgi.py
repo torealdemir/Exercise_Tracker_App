@@ -1,5 +1,5 @@
 """
-WSGI config for exercise_tracker_backend project.
+WSGI config for backend_exercise_tracker project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'exercise_tracker_backend.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend_exercise_tracker.settings')
 
 application = get_wsgi_application()
