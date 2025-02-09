@@ -17,7 +17,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-SECRET_KEY = os.getenv("sSECRET_KEY", "default-secret-key")
+SECRET_KEY = os.getenv("SECRET_KEY", "default-secret-key")
 DEBUG = os.getenv("DEBUG", "True") == "True"
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,10 +27,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-mi81m&_32c3ddkjht134pp6)dif!g9pz9432ea1b=%ng4+h0wq'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "0") == "1"
 
 ALLOWED_HOSTS = []
 
@@ -73,7 +73,7 @@ SIMPLE_JWT = {
     "ROTATE_REFRESH_TOKENS": True,  # Generates a new refresh token upon use
     "BLACKLIST_AFTER_ROTATION": True,  # Blacklist old refresh tokens when rotated
     "ALGORITHM": "HS256",  # Hashing algorithm for signing tokens
-    "SIGNING_KEY": "your-very-secure-secret-key",  # Replace with an environment variable!
+    "SIGNING_KEY": os.getenv("SIGNING_KEY"),  # Replace with an environment variable!
     "AUTH_HEADER_TYPES": ("Bearer",),
     "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
 }
