@@ -58,3 +58,9 @@ h2 {
   border: 1px solid #d6d8db;
   cursor: pointer;
 }
+
+.statistics {
+  font-weight: bold;
+  color: #f5c6cb;
+  text-align: center;
+}
