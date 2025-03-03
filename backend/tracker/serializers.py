@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
+from .models import ExerciseLog
 
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only = True, min_length=6)
@@ -16,3 +17,8 @@ class UserSerializer(serializers.ModelSerializer):
             password=validated_data['password']
         )
         return user
+    
+class ExerciseLogSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ExerciseLog
+        fields = ['id', 'user', 'date', 'exercises']
