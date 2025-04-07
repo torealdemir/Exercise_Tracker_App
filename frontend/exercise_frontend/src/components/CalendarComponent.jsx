@@ -26,18 +26,22 @@ const CalendarComponent = () => {
   };
 
   // ✅ Calculate Days Worked in the Current Month
-  const calculateDaysWorkedThisMonth = () => {
-    const currentMonth = new Date().getMonth();
-    const currentYear = new Date().getFullYear();
-
-    // Get unique dates from exercise logs in the current month
+  const calculateDaysWorkedInSelectedMonth = () => {
+    const selectedMonth = selectedDate.getMonth();
+    const selectedYear = selectedDate.getFullYear();
+  
     const workedDays = Object.keys(exercises).filter((dateKey) => {
-      const date = new Date(dateKey);
-      return date.getMonth() === currentMonth && date.getFullYear() === currentYear && exercises[dateKey].length > 0;
+      const date = new Date(`${dateKey}T00:00:00`);
+      return (
+        date.getMonth() === selectedMonth &&
+        date.getFullYear() === selectedYear &&
+        exercises[dateKey].length > 0
+      );
     });
-
+  
     return workedDays.length;
   };
+  
 
   return (
     <div className="calendar-container" style={{ 
@@ -60,7 +64,7 @@ const CalendarComponent = () => {
 
       {/* ✅ Days Worked This Month Section */}
       <div className="statistics">
-        <p><strong>Days Worked This Month:</strong> {calculateDaysWorkedThisMonth()}</p>
+        <p><strong>Days Worked This Month:</strong> {calculateDaysWorkedInSelectedMonth()}</p>
       </div>
     </div>
   );
